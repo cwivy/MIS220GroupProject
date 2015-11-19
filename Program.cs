@@ -19,14 +19,13 @@ namespace MIS220GroupProject
             Application.Run(new Form1());
             //Hey!!!!!!!!!!!!!!
             //Hello
-<<<<<<< HEAD
+
             //What's upppppppp
             //What's upppppppp
 
-=======
             //Testing
             //Testing
->>>>>>> origin/master
+
         }
     }
 
