@@ -8,26 +8,60 @@ namespace MIS220GroupProject
 {
     class Account
     {
+        private int cardNum;
+        private double balance;
+        private List<int> rentalsHeld;
+        private string memStatus;
+        private int paymentType;
+
+
+        public int CardNum
+        {
+            get { return cardNum; }
+            set { cardNum = value; }
+        }
+
+        public double Balance
+        {
+            get { return balance; }
+            set { balance = value; }
+        }
+
+        public List<int> RentalsHeld
+        {
+            get { return rentalsHeld; }
+            set { rentalsHeld = value; }
+        }
+
+        public string MemStatus
+        {
+            get { return memStatus; }
+            set { memStatus = value; }
+        }
+
+        public int PaymentType
+        {
+            get { return paymentType; }
+            set { paymentType = value; }
+        }
+        
+        
+        
         private int id;
-        private int pass;
         private string fName;
         private string lName;
-        private string address;
+        private string address1;
+        private string address2;
         private string phone;
         private string city;
         private string state;
         private int zip;
+        private DateTime dateOfBirth;
 
         public int Id
         {
             get { return id; }
             set { id = value; }
-        }
-
-        public int Pass
-        {
-            get { return pass; }
-            set { pass = value; }
         }
 
         public string FName
@@ -42,10 +76,16 @@ namespace MIS220GroupProject
             set { lName = value; }
         }
 
-        public string Address
+        public string Address1
         {
-            get { return address; }
-            set { address = value; }
+            get { return address1; }
+            set { address1 = value; }
+        }
+
+        public string Address2
+        {
+            get { return address2; }
+            set { address2 = value; }
         }
 
         public string Phone
