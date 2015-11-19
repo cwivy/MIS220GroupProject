@@ -17,14 +17,6 @@ namespace MIS220GroupProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            //Hey!!!!!!!!!!!!!!
-            //Hello
-
-            //What's upppppppp
-            //What's upppppppp
-
-            //Testing
-            //Testing
 
         }
     }
