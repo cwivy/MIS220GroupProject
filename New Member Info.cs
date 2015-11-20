@@ -16,5 +16,10 @@ namespace MIS220GroupProject
         {
             InitializeComponent();
         }
+
+        private void saveAccInfoButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
