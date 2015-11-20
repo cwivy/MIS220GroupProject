@@ -19,7 +19,7 @@ namespace MIS220GroupProject
 
         //-----------Methods-----------
 
-        public static void CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, string zip, DateTime dateOfBirth)
+        public static int CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, string zip, DateTime dateOfBirth)
         {
             string sqlText;
 
@@ -30,8 +30,25 @@ namespace MIS220GroupProject
             SqlConnection connection = new SqlConnection(connectionString);
 
             SqlCommand command = new SqlCommand(sqlText, connection);
-            command.CommandType = CommandType.StoredProcedure;
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddWithValue("@FirstName", fName);
+            command.Parameters.AddWithValue("@LastName", lName);
+            command.Parameters.AddWithValue("@BirthDate", dateOfBirth);
+            command.Parameters.AddWithValue("@Address1", address1);
+            command.Parameters.AddWithValue("@Address2", address2);
+            command.Parameters.AddWithValue("@City", city);
+            command.Parameters.AddWithValue("@State", state);
+            command.Parameters.AddWithValue("@Zip", zip);
+            command.Parameters.AddWithValue("@Phone", phone);
 
+            connection.Open();
+
+            int result = command.ExecuteNonQuery();
+
+            command.Dispose();
+            connection.Close();
+
+            return result;
         }
     }
 }
