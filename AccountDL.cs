@@ -19,5 +19,16 @@ namespace MIS220GroupProject
 
         //-----------Methods-----------
 
+        public static void CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, string zip, DateTime dateOfBirth)
+        {
+            string sqlText;
+            sqlText = "EmployeeInsert";
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            SqlCommand command = new SqlCommand(sqlText, connection);
+            command.CommandType = CommandType.StoredProcedure;
+
+        }
     }
 }
