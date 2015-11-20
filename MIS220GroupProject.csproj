@@ -46,11 +46,11 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Login.cs" />
-    <Compile Include="TestForm.cs">
+    <Compile Include="New Member Info.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
+    <Compile Include="New Member Info.Designer.cs">
+      <DependentUpon>New Member Info.cs</DependentUpon>
     </Compile>
     <Compile Include="Member.cs" />
     <Compile Include="Movie.cs" />
@@ -67,8 +67,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
+    <EmbeddedResource Include="New Member Info.resx">
+      <DependentUpon>New Member Info.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

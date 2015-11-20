@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MIS220GroupProject
 {
-    public partial class TestForm : Form
+    public partial class newMemForm : Form
     {
-        public TestForm()
+        public newMemForm()
         {
             InitializeComponent();
         }
