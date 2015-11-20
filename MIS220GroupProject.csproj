@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
-    <Compile Include="AccountDL.cs" />
+    <Compile Include="MemberDL.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="New Member Info.cs">
       <SubType>Form</SubType>
