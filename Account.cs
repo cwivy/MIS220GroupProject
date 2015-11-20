@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MIS220GroupProject
 {
-    class Account
+    public class Account
     {
         private int cardNum;
         private double balance;
