@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace MIS220GroupProject
 {
-    public static class MemberDL
+    /*public static*/ class MemberDL
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["Data Source = mis220.eil - server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide"].ConnectionString;
 
@@ -19,7 +19,7 @@ namespace MIS220GroupProject
 
         //-----------Methods-----------
 
-        public static int CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, string zip, DateTime dateOfBirth)
+        public int CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, string zip, DateTime dateOfBirth)
         {
             string sqlText;
 

@@ -19,6 +19,7 @@ namespace MIS220GroupProject
         private int zip;
         private DateTime dateOfBirth;
 
+       
         public int Id
         {
             get { return id; }
@@ -71,6 +72,11 @@ namespace MIS220GroupProject
         {
             get { return zip; }
             set { zip = value; }
+        }
+        public DateTime DateOfBirth
+        {
+            get { return dateOfBirth; }
+            set { dateOfBirth = value; }
         }
     }
 }

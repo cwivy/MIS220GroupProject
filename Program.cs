@@ -15,11 +15,9 @@ namespace MIS220GroupProject
         [STAThread]
         static void Main()
         {
-            //carlton eats his boogers
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new newMemForm());
-
         }
     }
 
