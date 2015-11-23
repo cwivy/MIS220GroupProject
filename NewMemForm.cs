@@ -15,6 +15,7 @@ namespace MIS220GroupProject
         
         //----------Members--------------
         private Member thisMember;
+        private Login thisLogin;
         //private MemberDL thisMemberDL;
         
 
@@ -57,6 +58,7 @@ namespace MIS220GroupProject
         {
 
             thisMember = new Member();
+            thisLogin = new Login();
 
             thisMember.FName = firstNameBox.Text;
             thisMember.LName = lastNameBox.Text;
@@ -67,13 +69,15 @@ namespace MIS220GroupProject
             thisMember.State = stateBox.Text;
             thisMember.Zip = Convert.ToInt32(zipBox.Text);
             thisMember.Phone = Convert.ToString(phoneNumBox.Text);
+            thisLogin.Username = userNameBox.Text;
+            thisLogin.Password = passwordBox.Text;
 
             string DOBString = Convert.ToString(thisMember.DateOfBirth);
             DOBString = DOBString.Substring(0, 10);
 
             thisMember.CreateAccount(thisMember.FName, thisMember.LName, thisMember.Address1, thisMember.Address2, thisMember.Phone, thisMember.City, thisMember.State, thisMember.Zip, DOBString);
             ClearTextBoxes();
-            MessageBox.Show("Thank you! Your member account has been updated");
+            MessageBox.Show("You have successfully created an account!");
         }
     }
 }

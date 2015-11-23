@@ -82,9 +82,11 @@ namespace MIS220GroupProject
         }
 
 
-        public static void CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, Int32 zip, string dateOfBirth)
+        public void CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, Int32 zip, string dateOfBirth)
         {
+            //SQL Statement for creating new member
             string sqlIns = "INSERT INTO Member(FirstName, LastName, DOB, Address1, Address2, City, State, Zip, Phone) VALUES(@firstName, @lastName, @DOB, @address1, @address2, @city, @state, @zip, @phone)";
+            //Establishes connection with SQL DB
             string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
             SqlConnection dbCon = new SqlConnection(dbStr);
 
@@ -114,7 +116,32 @@ namespace MIS220GroupProject
             {
                 dbCon.Close();
             }
-        }     
+        }    
+ 
+        public void Select(int MemID)
+        {
+            string sqlText;
+            sqlText = "SELECT * FROM Member WHERE MemID = @MemID";
+
+            Member member = new Member();
+
+            //Establishes connection with SQL DB
+            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
+            SqlConnection dbCon = new SqlConnection(dbStr);
+
+            SqlCommand command = new SqlCommand(sqlText, dbCon);
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddWithValue("@MemID", MemID);
+
+            dbCon.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                reader.Read();
+                if (reader.IsDBNull() == false)
+            }
+        }
     }
 
 }
