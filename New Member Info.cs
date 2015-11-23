@@ -13,7 +13,7 @@ namespace MIS220GroupProject
     public partial class newMemForm : Form
     {
         private Member thisMember;
-        private MemberDL thisMemerDL;
+        \
         
         public newMemForm()
         {
@@ -39,6 +39,22 @@ namespace MIS220GroupProject
             DOBString = DOBString.Substring(0, 10);
                                               
             thisMember.CreateAccount(thisMember.FName, thisMember.LName, thisMember.Address1, thisMember.Address2, thisMember.Phone, thisMember.City, thisMember.State, thisMember.Zip, DOBString);
+            ClearTextBoxes();
+            MessageBox.Show("Thank you! Your member account has been updated");
+
+        }
+        
+        private void ClearTextBoxes()
+        {
+            firstNameBox.Text = " ";
+            lastNameBox.Text = " ";
+            DOBDateTimePicker.Value = DateTime.Now;
+            address1Box.Text = " ";
+            address2Box.Text = " ";
+            cityBox.Text = " ";
+            stateBox.Text = " ";
+            zipBox.Text = " ";
+            phoneNumBox.Text = " ";
         }
     }
 }
