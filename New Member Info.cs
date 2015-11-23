@@ -13,7 +13,7 @@ namespace MIS220GroupProject
     public partial class newMemForm : Form
     {
         private Member thisMember;
-        \
+        
         
         public newMemForm()
         {
