@@ -81,11 +81,7 @@ namespace MIS220GroupProject
             set { dateOfBirth = value; }
         }
 
-<<<<<<< HEAD
-        public void CreateAccount()
-        {
-            MemberDL.CreateAccount(fName, lName, address1, address2, phone, city, state, zip, dateOfBirth);
-=======
+
         public void CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, Int32 zip, string dateOfBirth)
         {
             string sqlIns = "INSERT INTO Member(FirstName, LastName, DOB, Address1, Address2, City, State, Zip, Phone) VALUES(@firstName, @lastName, @DOB, @address1, @address2, @city, @state, @zip, @phone)";
@@ -118,7 +114,6 @@ namespace MIS220GroupProject
             {
                 dbCon.Close();
             }
->>>>>>> origin/master
         }
     }
 
