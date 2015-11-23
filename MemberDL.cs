@@ -11,8 +11,6 @@ namespace MIS220GroupProject
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["Data Source = mis220.eil - server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide"].ConnectionString;
 
-
-
         //-----------Methods-----------
 
 
