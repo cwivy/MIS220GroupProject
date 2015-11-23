@@ -159,7 +159,7 @@ namespace MIS220GroupProject
                     member.LName = reader.GetString(3);
 
                 if (reader.IsDBNull(4) == false)
-                    member.DateOfBirth = reader.GetSqlDateTime(4).ToDateTime();
+                    member.DateOfBirth = Convert.ToDateTime(reader.GetSqlDateTime(4));
 
                 if (reader.IsDBNull(5) == false)
                     member.Address1 = reader.GetString(5);
