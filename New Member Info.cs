@@ -13,6 +13,7 @@ namespace MIS220GroupProject
     public partial class newMemForm : Form
     {
         private Member thisMember;
+        private MemberDL thisMemberDL;
         
         
         public newMemForm()
@@ -24,6 +25,7 @@ namespace MIS220GroupProject
         {
                        
             thisMember = new Member();
+            thisMemberDL = new MemberDL();
             
             thisMember.FName = firstNameBox.Text;
             thisMember.LName = lastNameBox.Text;

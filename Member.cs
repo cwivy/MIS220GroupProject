@@ -82,7 +82,10 @@ namespace MIS220GroupProject
         }
 
 
-        
+        public void CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, Int32 zip, string dateOfBirth)
+        {
+            MemberDL.CreateAccount(fName, lName, address1, address2, phone, city, state, zip, dateOfBirth);
+        }
     }
 
 }
