@@ -36,12 +36,14 @@ namespace MIS220GroupProject
 
         private void createAccount_BTN_Click(object sender, EventArgs e)
         {
-            //NewMemForm form = new NewMemForm();
-            //form.ShowDialog();
-            //this.Close();
-
+<<<<<<< HEAD
+            NewMemForm form = new NewMemForm();
+            form.ShowDialog();
+            this.Close();
+=======
             this.Hide();
-            new NewMemForm().Show();
+            new newMemForm().Show();
+>>>>>>> origin/master
         }
 
 
