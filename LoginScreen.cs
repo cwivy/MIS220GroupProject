@@ -44,6 +44,13 @@ namespace MIS220GroupProject
             new NewMemForm().Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TestForm form = new TestForm();
+            form.ShowDialog();
+            this.Close();
+        }
+
 
 
     }

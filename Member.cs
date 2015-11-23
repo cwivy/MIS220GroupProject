@@ -146,6 +146,7 @@ namespace MIS220GroupProject
             if (reader.HasRows)
             {
                 reader.Read();
+
                 if (reader.IsDBNull(0) == false)
                     member.Id = reader.GetInt32(0);
 
@@ -159,7 +160,7 @@ namespace MIS220GroupProject
                     member.LName = reader.GetString(3);
 
                 if (reader.IsDBNull(4) == false)
-                    member.DateOfBirth = Convert.ToDateTime(reader.GetSqlDateTime(4));
+                    member.DateOfBirth = Convert.ToDateTime(reader.GetDateTime(4));
 
                 if (reader.IsDBNull(5) == false)
                     member.Address1 = reader.GetString(5);
