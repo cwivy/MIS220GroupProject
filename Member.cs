@@ -11,6 +11,7 @@ namespace MIS220GroupProject
     public class Member : Account
     {
         private int id;
+        private int accId;
         private string fName;
         private string lName;
         private string address1;
@@ -26,6 +27,12 @@ namespace MIS220GroupProject
         {
             get { return id; }
             set { id = value; }
+        }
+
+        public int AccId
+        {
+            get { return accId; }
+            set { accId = value; }
         }
 
         public string FName
@@ -118,7 +125,7 @@ namespace MIS220GroupProject
             }
         }    
  
-        public void Select(int MemID)
+        public Member Select(int MemID)
         {
             string sqlText;
             sqlText = "SELECT * FROM Member WHERE MemID = @MemID";
@@ -139,8 +146,45 @@ namespace MIS220GroupProject
             if (reader.HasRows)
             {
                 reader.Read();
-                if (reader.IsDBNull() == false)
+                if (reader.IsDBNull(0) == false)
+                    member.Id = reader.GetInt32(0);
+
+                if (reader.IsDBNull(1) == false)
+                    member.AccId = reader.GetInt32(1);
+
+                if (reader.IsDBNull(2) == false)
+                    member.FName = reader.GetString(2);
+
+                if (reader.IsDBNull(3) == false)
+                    member.LName = reader.GetString(3);
+
+                if (reader.IsDBNull(4) == false)
+                    member.DateOfBirth = reader.GetSqlDateTime(4).ToDateTime();
+
+                if (reader.IsDBNull(5) == false)
+                    member.Address1 = reader.GetString(5);
+
+                if (reader.IsDBNull(6) == false)
+                    member.Address2 = reader.GetString(6);
+
+                if (reader.IsDBNull(7) == false)
+                    member.City = reader.GetString(7);
+
+                if (reader.IsDBNull(8) == false)
+                    member.State = reader.GetString(8);
+
+                if (reader.IsDBNull(9) == false)
+                    member.Zip = reader.GetInt32(9);
+
+                if (reader.IsDBNull(10) == false)
+                    member.Phone = reader.GetString(10);
             }
+
+            reader.Close();
+            command.Dispose();
+            dbCon.Close();
+
+            return member;
         }
     }
 
