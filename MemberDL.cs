@@ -10,52 +10,50 @@ namespace MIS220GroupProject
     public static class MemberDL
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["Data Source = mis220.eil - server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide"].ConnectionString;
-<<<<<<< HEAD
+
 
 
         //-----------Methods-----------
 
-=======
-        
->>>>>>> origin/master
+
         public static string ConnectionString
         {
             get {  return MemberDL.connectionString; }
             set { MemberDL.connectionString = value; }
         }
 
-
-
-        public static int CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, int zip, DateTime dateOfBirth)
+        public static void CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, Int32 zip, string dateOfBirth)
         {
-            string sqlText;
+            string sqlIns = "INSERT INTO Member(FirstName, LastName, DOB, Address1, Address2, City, State, Zip, Phone) VALUES(@firstName, @lastName, @DOB, @address1, @address2, @city, @state, @zip, @phone)";
+            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
+            SqlConnection dbCon = new SqlConnection(dbStr);
 
-            sqlText = "INSERT INTO Member(FirstName, LastName, DOB, Address1, Address2, City, State, Zip, Phone)";
-            sqlText += "VALUES(@firstName, @lastName, @DOB, @address1, @address2, @city, @state, @zip, @phone)";
 
-            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                SqlCommand cmdIns = new SqlCommand(sqlIns, dbCon);
+                cmdIns.Parameters.AddWithValue("@firstName", fName);
+                cmdIns.Parameters.AddWithValue("@lastName", lName);
+                cmdIns.Parameters.AddWithValue("@DOB", dateOfBirth);
+                cmdIns.Parameters.AddWithValue("@address1", address1);
+                cmdIns.Parameters.AddWithValue("@address2", address2);
+                cmdIns.Parameters.AddWithValue("@city", city);
+                cmdIns.Parameters.AddWithValue("@state", state);
+                cmdIns.Parameters.AddWithValue("@zip", zip);
+                cmdIns.Parameters.AddWithValue("@phone", phone);
 
-            SqlCommand command = new SqlCommand(sqlText, connection);
-            command.CommandType = CommandType.Text;
-            command.Parameters.AddWithValue("@firstName", fName);
-            command.Parameters.AddWithValue("@lastName", lName);
-            command.Parameters.AddWithValue("@DOB", dateOfBirth);
-            command.Parameters.AddWithValue("@address1", address1);
-            command.Parameters.AddWithValue("@address2", address2);
-            command.Parameters.AddWithValue("@city", city);
-            command.Parameters.AddWithValue("@state", state);
-            command.Parameters.AddWithValue("@zip", zip);
-            command.Parameters.AddWithValue("@phone", phone);
+                dbCon.Open();
+                cmdIns.ExecuteNonQuery();
+                cmdIns.Parameters.Clear();
+                cmdIns.Dispose();
+                cmdIns = null;
+            }
 
-            connection.Open();
-
-            int result = command.ExecuteNonQuery();
-
-            command.Dispose();
-            connection.Close();
-
-            return result;
-        }
-
+            //catch(Exception ex)//need to write exceptions
+            finally
+            {
+                dbCon.Close();
+            }
+        }       
     }
 }

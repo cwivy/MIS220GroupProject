@@ -60,33 +60,32 @@
             // 
             // loginUserBox
             // 
-<<<<<<< HEAD
+
             this.loginUserBox.Location = new System.Drawing.Point(155, 95);
             this.loginUserBox.Name = "loginUserBox";
             this.loginUserBox.Size = new System.Drawing.Size(100, 20);
             this.loginUserBox.TabIndex = 1;
-=======
+
             this.loginUser_TXT.Location = new System.Drawing.Point(207, 117);
             this.loginUser_TXT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.loginUser_TXT.Name = "loginUser_TXT";
             this.loginUser_TXT.Size = new System.Drawing.Size(132, 22);
             this.loginUser_TXT.TabIndex = 1;
->>>>>>> origin/master
             // 
             // loginPassBox
             // 
-<<<<<<< HEAD
+
             this.loginPassBox.Location = new System.Drawing.Point(155, 121);
             this.loginPassBox.Name = "loginPassBox";
             this.loginPassBox.Size = new System.Drawing.Size(100, 20);
             this.loginPassBox.TabIndex = 2;
-=======
+
             this.loginPass_TXT.Location = new System.Drawing.Point(207, 149);
             this.loginPass_TXT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.loginPass_TXT.Name = "loginPass_TXT";
             this.loginPass_TXT.Size = new System.Drawing.Size(132, 22);
             this.loginPass_TXT.TabIndex = 2;
->>>>>>> origin/master
+
             // 
             // label3
             // 
