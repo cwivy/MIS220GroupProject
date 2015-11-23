@@ -7,9 +7,12 @@ using System.Configuration;
 
 namespace MIS220GroupProject
 {
-    /*public static*/ class MemberDL
+    public static class MemberDL
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["Data Source = mis220.eil - server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide"].ConnectionString;
+
+
+        //-----------Methods-----------
 
         public static string ConnectionString
         {
@@ -17,12 +20,11 @@ namespace MIS220GroupProject
             set { MemberDL.connectionString = value; }
         }
 
-        //-----------Methods-----------
 
-        public int CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, string zip, DateTime dateOfBirth)
+
+        public static int CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, int zip, DateTime dateOfBirth)
         {
             string sqlText;
-
 
             sqlText = "INSERT INTO Member(FirstName, LastName, DOB, Address1, Address2, City, State, Zip, Phone)";
             sqlText += "VALUES(@firstName, @lastName, @DOB, @address1, @address2, @city, @state, @zip, @phone)";
@@ -31,15 +33,15 @@ namespace MIS220GroupProject
 
             SqlCommand command = new SqlCommand(sqlText, connection);
             command.CommandType = CommandType.Text;
-            command.Parameters.AddWithValue("@FirstName", fName);
-            command.Parameters.AddWithValue("@LastName", lName);
-            command.Parameters.AddWithValue("@BirthDate", dateOfBirth);
-            command.Parameters.AddWithValue("@Address1", address1);
-            command.Parameters.AddWithValue("@Address2", address2);
-            command.Parameters.AddWithValue("@City", city);
-            command.Parameters.AddWithValue("@State", state);
-            command.Parameters.AddWithValue("@Zip", zip);
-            command.Parameters.AddWithValue("@Phone", phone);
+            command.Parameters.AddWithValue("@firstName", fName);
+            command.Parameters.AddWithValue("@lastName", lName);
+            command.Parameters.AddWithValue("@DOB", dateOfBirth);
+            command.Parameters.AddWithValue("@address1", address1);
+            command.Parameters.AddWithValue("@address2", address2);
+            command.Parameters.AddWithValue("@city", city);
+            command.Parameters.AddWithValue("@state", state);
+            command.Parameters.AddWithValue("@zip", zip);
+            command.Parameters.AddWithValue("@phone", phone);
 
             connection.Open();
 
@@ -50,5 +52,6 @@ namespace MIS220GroupProject
 
             return result;
         }
+
     }
 }

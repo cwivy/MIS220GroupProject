@@ -20,7 +20,7 @@ namespace MIS220GroupProject
         private void login_BTN_Click(object sender, EventArgs e)
         {
             this.Hide();
-            if (loginUser_TXT.Text.ToString() != "admin")
+            if (loginUserBox.Text.ToString() != "admin")
             {
                 MemberHome form = new MemberHome();
                 form.ShowDialog();
@@ -32,6 +32,13 @@ namespace MIS220GroupProject
                 aForm.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void createAccount_BTN_Click(object sender, EventArgs e)
+        {
+            NewMemForm form = new NewMemForm();
+            form.ShowDialog();
+            this.Close();
         }
 
 

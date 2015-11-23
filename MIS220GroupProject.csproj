@@ -66,11 +66,11 @@
     <Compile Include="MemberHome.Designer.cs">
       <DependentUpon>MemberHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="New Member Info.cs">
+    <Compile Include="NewMemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New Member Info.Designer.cs">
-      <DependentUpon>New Member Info.cs</DependentUpon>
+    <Compile Include="NewMemForm.Designer.cs">
+      <DependentUpon>NewMemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Member.cs" />
     <Compile Include="Movie.cs" />
@@ -96,8 +96,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="New Member Info.resx">
-      <DependentUpon>New Member Info.cs</DependentUpon>
+    <EmbeddedResource Include="NewMemForm.resx">
+      <DependentUpon>NewMemForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

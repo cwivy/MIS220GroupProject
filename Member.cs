@@ -78,5 +78,10 @@ namespace MIS220GroupProject
             get { return dateOfBirth; }
             set { dateOfBirth = value; }
         }
+
+        public void CreateAccount()
+        {
+            MemberDL.CreateAccount(fName, lName, address1, address2, phone, city, state, zip, dateOfBirth);
+        }
     }
 }
