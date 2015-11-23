@@ -10,10 +10,14 @@ namespace MIS220GroupProject
     public static class MemberDL
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["Data Source = mis220.eil - server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide"].ConnectionString;
+<<<<<<< HEAD
 
 
         //-----------Methods-----------
 
+=======
+        
+>>>>>>> origin/master
         public static string ConnectionString
         {
             get {  return MemberDL.connectionString; }
