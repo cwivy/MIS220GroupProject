@@ -22,11 +22,9 @@ namespace MIS220GroupProject
 
         private void saveAccInfoButton_Click(object sender, EventArgs e)
         {
-            string zipString;
-            
+                       
             thisMember = new Member();
-            thisMemerDL = new MemberDL();
-
+            
             thisMember.FName = firstNameBox.Text;
             thisMember.LName = lastNameBox.Text;
             thisMember.DateOfBirth = Convert.ToDateTime(DOBDateTimePicker.Text);
@@ -35,10 +33,12 @@ namespace MIS220GroupProject
             thisMember.City = cityBox.Text;
             thisMember.State = stateBox.Text;
             thisMember.Zip = Convert.ToInt32(zipBox.Text);
-            thisMember.Phone = Convert.ToString(phoneNumBox);
-            zipString = Convert.ToString(thisMember.Zip);
-            
-            thisMemerDL.CreateAccount(thisMember.FName, thisMember.LName, thisMember.Address1, thisMember.Address2, thisMember.Phone, thisMember.City, thisMember.State, zipString, thisMember.DateOfBirth);
+            thisMember.Phone = Convert.ToString(phoneNumBox.Text);
+
+            string DOBString = Convert.ToString(thisMember.DateOfBirth);
+            DOBString = DOBString.Substring(0, 10);
+                                              
+            thisMember.CreateAccount(thisMember.FName, thisMember.LName, thisMember.Address1, thisMember.Address2, thisMember.Phone, thisMember.City, thisMember.State, thisMember.Zip, DOBString);
         }
     }
 }
