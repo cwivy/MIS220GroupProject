@@ -13,6 +13,7 @@ namespace MIS220GroupProject
     public partial class newMemForm : Form
     {
         private Member thisMember;
+        private MemberDL thisMemberDL;
         
         
         public newMemForm()
@@ -22,25 +23,7 @@ namespace MIS220GroupProject
 
         private void saveAccInfoButton_Click(object sender, EventArgs e)
         {
-                       
-            thisMember = new Member();
-            
-            thisMember.FName = firstNameBox.Text;
-            thisMember.LName = lastNameBox.Text;
-            thisMember.DateOfBirth = Convert.ToDateTime(DOBDateTimePicker.Text);
-            thisMember.Address1 = address1Box.Text;
-            thisMember.Address2 = address2Box.Text;
-            thisMember.City = cityBox.Text;
-            thisMember.State = stateBox.Text;
-            thisMember.Zip = Convert.ToInt32(zipBox.Text);
-            thisMember.Phone = Convert.ToString(phoneNumBox.Text);
 
-            string DOBString = Convert.ToString(thisMember.DateOfBirth);
-            DOBString = DOBString.Substring(0, 10);
-                                              
-            thisMember.CreateAccount(thisMember.FName, thisMember.LName, thisMember.Address1, thisMember.Address2, thisMember.Phone, thisMember.City, thisMember.State, thisMember.Zip, DOBString);
-            ClearTextBoxes();
-            MessageBox.Show("Thank you! Your member account has been updated");
 
         }
         

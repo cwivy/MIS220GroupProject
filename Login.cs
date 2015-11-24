@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace MIS220GroupProject
 {
-    class Login
+    public class Login
     {
         private string username;
         private int memberID;
@@ -35,6 +37,37 @@ namespace MIS220GroupProject
         {
             get { return isAdmin; }
             set { isAdmin = value; }
+        }
+
+        public void CreateLogin(string userName, string password)
+        {
+            //SQL Statement to create new login connecting to new member creation
+            string sqlIns = "insert into Login(username, MemberID, Password, IsAdmin) values (@username, @memberID, @password, null);";
+
+            //Establishes connection with SQL DB
+            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
+            SqlConnection dbCon = new SqlConnection(dbStr);
+
+            try
+            {
+                SqlCommand cmdIns = new SqlCommand(sqlIns, dbCon);
+                cmdIns.Parameters.AddWithValue("@username", userName);
+                cmdIns.Parameters.AddWithValue("@password", password);
+                
+                dbCon.Open();
+                cmdIns.ExecuteNonQuery();
+                cmdIns.Parameters.Clear();
+                cmdIns.Dispose();
+                cmdIns = null;
+            }
+
+            //catch(Exception ex)//need to write exceptions
+            finally
+            {
+                dbCon.Close();
+            }
+
+            
         }
     }
 }

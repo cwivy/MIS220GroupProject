@@ -36,73 +36,57 @@
             this.createAccount_BTN = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.login_BTN = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(125, 121);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(74, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(137, 153);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(76, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
             // loginUserBox
             // 
-
-            this.loginUserBox.Location = new System.Drawing.Point(155, 95);
+            this.loginUserBox.Location = new System.Drawing.Point(134, 89);
+            this.loginUserBox.Margin = new System.Windows.Forms.Padding(2);
             this.loginUserBox.Name = "loginUserBox";
-            this.loginUserBox.Size = new System.Drawing.Size(100, 20);
+            this.loginUserBox.Size = new System.Drawing.Size(76, 20);
             this.loginUserBox.TabIndex = 1;
-
-            this.loginUser_TXT.Location = new System.Drawing.Point(207, 117);
-            this.loginUser_TXT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.loginUser_TXT.Name = "loginUser_TXT";
-            this.loginUser_TXT.Size = new System.Drawing.Size(132, 22);
-            this.loginUser_TXT.TabIndex = 1;
             // 
             // loginPassBox
             // 
-
-            this.loginPassBox.Location = new System.Drawing.Point(155, 121);
+            this.loginPassBox.Location = new System.Drawing.Point(134, 110);
+            this.loginPassBox.Margin = new System.Windows.Forms.Padding(2);
             this.loginPassBox.Name = "loginPassBox";
-            this.loginPassBox.Size = new System.Drawing.Size(100, 20);
+            this.loginPassBox.Size = new System.Drawing.Size(76, 20);
             this.loginPassBox.TabIndex = 2;
-
-            this.loginPass_TXT.Location = new System.Drawing.Point(207, 149);
-            this.loginPass_TXT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.loginPass_TXT.Name = "loginPass_TXT";
-            this.loginPass_TXT.Size = new System.Drawing.Size(132, 22);
-            this.loginPass_TXT.TabIndex = 2;
-
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(175, 292);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(121, 211);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 17);
+            this.label3.Size = new System.Drawing.Size(137, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Don\'t have an account? -->";
             // 
             // createAccount_BTN
             // 
-            this.createAccount_BTN.Location = new System.Drawing.Point(367, 292);
-            this.createAccount_BTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.createAccount_BTN.Location = new System.Drawing.Point(264, 206);
             this.createAccount_BTN.Name = "createAccount_BTN";
-            this.createAccount_BTN.Size = new System.Drawing.Size(144, 28);
+            this.createAccount_BTN.Size = new System.Drawing.Size(108, 23);
             this.createAccount_BTN.TabIndex = 4;
             this.createAccount_BTN.Text = "Create Account";
             this.createAccount_BTN.UseVisualStyleBackColor = true;
@@ -112,29 +96,38 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(31, 49);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(23, 40);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(446, 41);
+            this.label4.Size = new System.Drawing.Size(360, 34);
             this.label4.TabIndex = 6;
             this.label4.Text = "Welcome to DVD Express!";
             // 
             // login_BTN
             // 
-            this.login_BTN.Location = new System.Drawing.Point(240, 181);
-            this.login_BTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.login_BTN.Location = new System.Drawing.Point(135, 135);
             this.login_BTN.Name = "login_BTN";
-            this.login_BTN.Size = new System.Drawing.Size(100, 28);
+            this.login_BTN.Size = new System.Drawing.Size(75, 23);
             this.login_BTN.TabIndex = 3;
             this.login_BTN.Text = "Login";
             this.login_BTN.UseVisualStyleBackColor = true;
             this.login_BTN.Click += new System.EventHandler(this.login_BTN_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(29, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Go to Test Form";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LoginScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 338);
+            this.ClientSize = new System.Drawing.Size(404, 249);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.login_BTN);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.createAccount_BTN);
@@ -143,7 +136,6 @@
             this.Controls.Add(this.loginUserBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LoginScreen";
             this.Text = "LoginScreen";
             this.ResumeLayout(false);
@@ -161,5 +153,6 @@
         private System.Windows.Forms.Button createAccount_BTN;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button login_BTN;
+        private System.Windows.Forms.Button button1;
     }
 }
