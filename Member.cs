@@ -110,15 +110,14 @@ namespace MIS220GroupProject
                 cmdIns.Parameters.AddWithValue("@zip", zip);
                 cmdIns.Parameters.AddWithValue("@phone", phone);
 
-                
-
-                dbCon.Open();
-                //expected result from scope_identity query
-                int scopeID = Convert.ToInt32(cmdIns.ExecuteScalar());
                 cmdIns.Parameters.Clear();
                 cmdIns.Dispose();
                 cmdIns = null;
-                return scopeID;
+
+                dbCon.Open();
+                //expected result from scope_identity query
+                Int32 scopeID = Convert.ChangeType(cmdIns.ExecuteScalar(), typeof(Int32);
+                return Convert.ToInt32(scopeID);
 
                 
             }
