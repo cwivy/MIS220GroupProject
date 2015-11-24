@@ -24,7 +24,7 @@ namespace MIS220GroupProject
             member.Id = Convert.ToInt32(textBox1.Text);
 
             member = member.Select(member.Id);
-            MessageBox.Show(member.FName + member.LName + member.Address1);
+            MessageBox.Show(member.FName + member.LName + member.Address1 + member.AccId +" Bal: " + member.Balance);
         }
     }
 }

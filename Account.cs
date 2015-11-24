@@ -8,12 +8,20 @@ namespace MIS220GroupProject
 {
     public class Account
     {
+        private int accId;
         private int cardNum;
         private double balance;
         private List<int> rentalsHeld;
         private string memStatus;
         private int paymentType;
 
+
+
+        public int AccId
+        {
+            get { return accId; }
+            set { accId = value; }
+        }
 
         public int CardNum
         {

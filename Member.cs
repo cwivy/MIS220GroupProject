@@ -11,7 +11,6 @@ namespace MIS220GroupProject
     public class Member : Account
     {
         private int id;
-        private int accId;
         private string fName;
         private string lName;
         private string address1;
@@ -27,12 +26,6 @@ namespace MIS220GroupProject
         {
             get { return id; }
             set { id = value; }
-        }
-
-        public int AccId
-        {
-            get { return accId; }
-            set { accId = value; }
         }
 
         public string FName
@@ -150,8 +143,8 @@ namespace MIS220GroupProject
                 if (reader.IsDBNull(0) == false)
                     member.Id = reader.GetInt32(0);
 
-                if (reader.IsDBNull(1) == false)
-                    member.AccId = reader.GetInt32(1);
+                //if (reader.IsDBNull(1) == false)
+                //    member.AccId = reader.GetInt32(1);
 
                 if (reader.IsDBNull(2) == false)
                     member.FName = reader.GetString(2);
@@ -179,6 +172,39 @@ namespace MIS220GroupProject
 
                 if (reader.IsDBNull(10) == false)
                     member.Phone = reader.GetString(10);
+            }
+
+            reader.Close();
+            dbCon.Close();
+
+            sqlText = "SELECT * FROM Account as a INNER JOIN Member as m on a.AccountID = m.AccountID";
+            sqlText = "WHERE a.AccountID = @AccountID";
+
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddWithValue("@AccountID", member.AccId);
+
+            dbCon.Open();
+
+            reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                reader.Read();
+
+                if (reader.IsDBNull(0) == false)
+                    member.AccId = reader.GetInt32(0);
+
+                if (reader.IsDBNull(1) == false)
+                    member.MemStatus = reader.GetString(1);
+
+                if (reader.IsDBNull(2) == false)
+                    member.Balance = reader.GetDouble(2);
+
+                if (reader.IsDBNull(3) == false)
+                    member.CardNum = reader.GetInt32(3);
+
+                if (reader.IsDBNull(4) == false)
+                    member.PaymentType = reader.GetInt32(4);
             }
 
             reader.Close();
