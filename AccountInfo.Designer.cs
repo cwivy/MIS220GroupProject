@@ -44,7 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.address1_TXT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.adress2_TXT = new System.Windows.Forms.TextBox();
+            this.address2_TXT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.city_TXT = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -70,7 +70,6 @@
             this.cardNum_TXT.Name = "cardNum_TXT";
             this.cardNum_TXT.Size = new System.Drawing.Size(225, 22);
             this.cardNum_TXT.TabIndex = 0;
-            this.cardNum_TXT.TextChanged += new System.EventHandler(this.cardNum_TXT_TextChanged);
             // 
             // memStatus_TXT
             // 
@@ -134,6 +133,7 @@
             this.save_BTN.TabIndex = 10;
             this.save_BTN.Text = "Save";
             this.save_BTN.UseVisualStyleBackColor = true;
+            this.save_BTN.Click += new System.EventHandler(this.save_BTN_Click);
             // 
             // label1
             // 
@@ -196,12 +196,12 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Address 2:";
             // 
-            // adress2_TXT
+            // address2_TXT
             // 
-            this.adress2_TXT.Location = new System.Drawing.Point(182, 126);
-            this.adress2_TXT.Name = "adress2_TXT";
-            this.adress2_TXT.Size = new System.Drawing.Size(225, 22);
-            this.adress2_TXT.TabIndex = 17;
+            this.address2_TXT.Location = new System.Drawing.Point(182, 126);
+            this.address2_TXT.Name = "address2_TXT";
+            this.address2_TXT.Size = new System.Drawing.Size(225, 22);
+            this.address2_TXT.TabIndex = 17;
             // 
             // label5
             // 
@@ -364,7 +364,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.city_TXT);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.adress2_TXT);
+            this.Controls.Add(this.address2_TXT);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.address1_TXT);
             this.Controls.Add(this.label2);
@@ -404,7 +404,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox address1_TXT;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox adress2_TXT;
+        private System.Windows.Forms.TextBox address2_TXT;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox city_TXT;
         private System.Windows.Forms.Label label6;
