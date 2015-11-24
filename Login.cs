@@ -39,6 +39,7 @@ namespace MIS220GroupProject
             set { isAdmin = value; }
         }
 
+        //Methods---------------
         public void CreateLogin(string userName, string password, int memID)
         {
             //SQL Statement to create new login connecting to new member creation
