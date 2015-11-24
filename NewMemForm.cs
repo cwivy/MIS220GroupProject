@@ -75,8 +75,8 @@ namespace MIS220GroupProject
             string DOBString = Convert.ToString(thisMember.DateOfBirth);
             DOBString = DOBString.Substring(0, 10);
 
-            thisMember.CreateAccount(thisMember.FName, thisMember.LName, thisMember.Address1, thisMember.Address2, thisMember.Phone, thisMember.City, thisMember.State, thisMember.Zip, DOBString);
-            thisLogin.CreateLogin(thisLogin.Username, thisLogin.Password);
+            int scopeID = thisMember.CreateAccount(thisMember.FName, thisMember.LName, thisMember.Address1, thisMember.Address2, thisMember.Phone, thisMember.City, thisMember.State, thisMember.Zip, DOBString);
+            thisLogin.CreateLogin(thisLogin.Username, thisLogin.Password, scopeID);
             ClearTextBoxes();
             MessageBox.Show("You have successfully created an account!");
         }
